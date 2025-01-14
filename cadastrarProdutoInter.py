@@ -6,7 +6,7 @@ produtos = []
 
 
 def cadastrar_produto():
-    # Função para salvar o produto
+
     def salvar_produto():
         nome = nome_entry.get()
         descricao = descricao_entry.get()
@@ -30,7 +30,7 @@ def cadastrar_produto():
         janela_cadastro.destroy()
         atualizar_listagem()
 
-    janela_cadastro = tk.Toplevel(janela)  # Janela modal
+    janela_cadastro = tk.Toplevel(janela)
     janela_cadastro.title("Cadastrar Produto")
 
     tk.Label(janela_cadastro, text="Nome:").grid(row=0, column=0, sticky=tk.W)
@@ -56,7 +56,7 @@ def cadastrar_produto():
 
 
 def atualizar_listagem():
-    # Limpa a Treeview antes de atualizar
+
     for item in tree.get_children():
         tree.delete(item)
 
@@ -76,6 +76,6 @@ tree.pack(pady=10)
 botao_cadastrar = tk.Button(janela, text="Cadastrar Produto", command=cadastrar_produto)
 botao_cadastrar.pack()
 
-atualizar_listagem()  # Exibe a lista vazia inicialmente
+atualizar_listagem()
 
 janela.mainloop()
